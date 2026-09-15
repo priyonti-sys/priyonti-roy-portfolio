@@ -9,7 +9,7 @@ EDITING
 - Edit shared navigation, footer, or page copy in site-template.html, then run: python build_pages.py
 - Edit experience, projects, skills, achievements, and interactive behavior in script.js.
 - Edit visual design and responsive styles in styles.css.
-- The résumé links open Priyonti's Google Drive PDF; update the links in site-template.html and script.js if the file URL changes.
+- The résumé links open Priyonti's Google Drive DOCX; update the links in site-template.html and script.js if the file URL changes.
 - Keep both portraits in assets/.
 
 INTERACTIVE FEATURES

@@ -732,23 +732,33 @@
   }
 
   function renderAchievements() {
-    $('#achievementTrack').innerHTML = achievements.map(achievement => `
-      <article class="achievement-card">
+    const track = $('#achievementTrack');
+    const position = $('#achievementPosition');
+    let currentIndex = 0;
+
+    function showAchievement(index) {
+      currentIndex = (index + achievements.length) % achievements.length;
+      const achievement = achievements[currentIndex];
+      track.innerHTML = `
+      <article class="achievement-card" aria-label="Achievement ${currentIndex + 1} of ${achievements.length}">
         <span class="achievement-icon" aria-hidden="true">${escapeHtml(achievement.icon)}</span>
         <h3>${escapeHtml(achievement.title)}</h3>
         <p>${escapeHtml(achievement.text)}</p>
         <small>${escapeHtml(achievement.label)}</small>
       </article>
-    `).join('');
+      `;
+      position.textContent = `${currentIndex + 1} / ${achievements.length}`;
+    }
 
-    const track = $('#achievementTrack');
-    const move = direction => {
-      const card = $('.achievement-card', track);
-      const distance = card ? card.getBoundingClientRect().width + 18 : 330;
-      track.scrollBy({ left: direction * distance, behavior: 'smooth' });
-    };
-    $('#achievementPrev').addEventListener('click', () => move(-1));
-    $('#achievementNext').addEventListener('click', () => move(1));
+    $('#achievementPrev').addEventListener('click', () => showAchievement(currentIndex - 1));
+    $('#achievementNext').addEventListener('click', () => showAchievement(currentIndex + 1));
+    track.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        showAchievement(currentIndex + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    showAchievement(0);
   }
 
   function buildGmailComposeUrl({ to, subject = '', body = '' }) {
@@ -828,7 +838,7 @@
       })),
       { label: 'Email Priyonti', detail: 'Open a Gmail draft', target: 'https://mail.google.com/mail/?view=cm&fs=1&to=priyonti%40umich.edu', icon: '@', type: 'external' },
       { label: 'Open LinkedIn', detail: 'linkedin.com/in/priyonti', target: 'https://www.linkedin.com/in/priyonti', icon: 'in', type: 'external' },
-      { label: 'View résumé', detail: 'Priyonti Roy résumé on Google Drive', target: 'https://drive.google.com/file/d/1IC-4wPjn6UjalblSV1OWlVz2EwLdTBGE/view?usp=sharing', icon: '↗', type: 'external' }
+      { label: 'View résumé', detail: 'Priyonti Roy résumé on Google Drive', target: 'https://docs.google.com/document/d/1HUGdMYdrQz0wbWyW3dpYF0zdX2q_8Txd/edit?usp=drivesdk&ouid=112991153700534996091&rtpof=true&sd=true', icon: '↗', type: 'external' }
     ];
   }
 

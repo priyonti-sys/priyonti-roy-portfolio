@@ -1442,8 +1442,17 @@ html[data-theme="dark"] .achievements-section {
 
 .carousel-controls {
   display: flex;
+  align-items: center;
   gap: 8px;
   justify-content: flex-end;
+}
+
+.carousel-position {
+  min-width: 42px;
+  text-align: center;
+  color: var(--blue-200);
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .achievements-section .icon-btn {
@@ -1465,6 +1474,14 @@ html[data-theme="dark"] .achievements-section {
 
 .achievement-track::-webkit-scrollbar {
   display: none;
+}
+
+.achievement-track.is-single-card {
+  display: block;
+  max-width: 760px;
+  margin-inline: auto;
+  overflow: visible;
+  scroll-snap-type: none;
 }
 
 .achievement-card {
