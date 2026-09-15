@@ -679,19 +679,6 @@
     $('#projectSearch')?.addEventListener('input', renderProjects);
   }
 
-  function initResumeModal() {
-    const modal = $('#resumeModal');
-    $('#resumePreviewBtn')?.addEventListener('click', () => {
-      modal.showModal();
-      setModalState(true);
-    });
-    $('#resumeModalClose').addEventListener('click', () => modal.close());
-    modal.addEventListener('click', event => {
-      if (event.target === modal) modal.close();
-    });
-    modal.addEventListener('close', () => setModalState(false));
-  }
-
   function initMap() {
     const nodes = $$('.map-node');
     function selectLocation(id) {
@@ -841,7 +828,7 @@
       })),
       { label: 'Email Priyonti', detail: 'Open a Gmail draft', target: 'https://mail.google.com/mail/?view=cm&fs=1&to=priyonti%40umich.edu', icon: '@', type: 'external' },
       { label: 'Open LinkedIn', detail: 'linkedin.com/in/priyonti', target: 'https://www.linkedin.com/in/priyonti', icon: 'in', type: 'external' },
-      { label: 'Download résumé', detail: 'Priyonti Roy résumé PDF', target: 'assets/Priyonti_Roy_Resume.pdf', icon: '↓', type: 'download' }
+      { label: 'View résumé', detail: 'Priyonti Roy résumé on Google Drive', target: 'https://drive.google.com/file/d/1IC-4wPjn6UjalblSV1OWlVz2EwLdTBGE/view?usp=sharing', icon: '↗', type: 'external' }
     ];
   }
 
@@ -877,11 +864,6 @@
       else window.location.href = `projects.html?project=${encodeURIComponent(item.target)}`;
     } else if (item.type === 'external') {
       window.open(item.target, '_blank', 'noopener');
-    } else if (item.type === 'download') {
-      const anchor = document.createElement('a');
-      anchor.href = item.target;
-      anchor.download = '';
-      anchor.click();
     } else {
       window.location.href = item.target;
     }
@@ -955,7 +937,6 @@
       renderProjects();
     }
     initProjectModal();
-    initResumeModal();
     if ($('#mapDetail')) initMap();
     if ($('#skillCategories')) {
       renderSkillCategories(0);
