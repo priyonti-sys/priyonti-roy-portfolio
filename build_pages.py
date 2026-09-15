@@ -26,7 +26,6 @@ pages = {
     "about.html": ("about", "impact"),
     "experience.html": ("experience", "achievements"),
     "projects.html": ("projects",),
-    "skills.html": ("skills",),
     "education.html": ("education",),
     "contact.html": ("contact",),
 }

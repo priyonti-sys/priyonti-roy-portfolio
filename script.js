@@ -16,7 +16,7 @@
         'Handle account adjustments, payment-related requests, freezes, deficits, and signer changes.',
         'Provide timely support to student leaders through email, phone, and in-person interactions.'
       ],
-      tools: ['SOAS Dashboard', 'Google Suite', 'Financial account support', 'University financial guidelines', 'Payment requests', 'Student services', 'Email and phone support']
+      tools: ['SOAS Dashboard', 'Google Suite', 'Student account support', 'University financial guidelines']
     },
     {
       id: 'visit-detroit',
@@ -34,7 +34,7 @@
         'Led a major restaurant-partner data review that corrected outdated records and improved classification between paid partners and Neighborhood Promotion Program participants.',
         'Participated in meetings, consulting discussions, public-facing events, and cross-department learning opportunities to understand Visit Detroit’s business from multiple perspectives.'
       ],
-      tools: ['iDSS CRM', 'STOVA', 'Tempest', 'Microsoft Excel', 'Microsoft Word', 'Email outreach', 'Report generation', 'Event operations']
+      tools: ['iDSS CRM', 'Partner onboarding', 'Data validation', 'Event support']
     },
     {
       id: 'general-motors',
@@ -51,7 +51,7 @@
         'Completed CPR and AED training, career workshops, mock interviews, debate activities, and team problem-solving challenges.',
         'Built professional relationships with mentors and retirees while developing teamwork, communication, responsibility, and community awareness.'
       ],
-      tools: ['Community engagement', 'Project execution', 'Team collaboration', 'Public safety', 'Career readiness', 'CPR/AED', 'Communication']
+      tools: ['Community service', 'Team collaboration', 'Project coordination']
     },
     {
       id: 'math-corps',
@@ -67,7 +67,7 @@
         'Monitored progress, identified gaps in understanding, and adjusted support to meet individual learning needs.',
         'Developed patience, clarity, classroom awareness, and the ability to translate complex ideas into understandable steps.'
       ],
-      tools: ['Instruction', 'Mentoring', 'Quantitative reasoning', 'Small-group facilitation', 'Progress monitoring', 'Feedback']
+      tools: ['Mathematics instruction', 'Small-group teaching', 'Progress monitoring']
     }
   ];
 
@@ -259,39 +259,6 @@
     }
   ];
 
-  const skillCategories = [
-    {
-      id: 'operations',
-      label: 'Operations & Data',
-      summary: 'I help student leaders navigate account processes, maintain reliable records, document details, and turn operational needs into clear next steps.',
-      skills: ['Financial account support', 'University financial guidelines', 'Account adjustments', 'Payment requests', 'Deficit and freeze support', 'Signer changes', 'CRM database management', 'Data entry and validation', 'Report generation', 'Account lifecycle management', 'Process improvement', 'Documentation', 'Quality control']
-    },
-    {
-      id: 'partnerships',
-      label: 'Partnerships & Communication',
-      summary: 'I support partner relationships through responsive communication, clear onboarding, thoughtful follow-up, and accurate contact management.',
-      skills: ['Partner onboarding', 'Stakeholder coordination', 'Phone and email outreach', 'Customer service', 'Professional correspondence', 'Engagement follow-up', 'Relationship management', 'Public-facing communication', 'Networking', 'Cross-functional collaboration']
-    },
-    {
-      id: 'events',
-      label: 'Events & Service',
-      summary: 'I contribute before, during, and after events by coordinating logistics, preparing materials, supporting registration, and helping participants feel welcomed.',
-      skills: ['Event planning', 'Registration support', 'Venue and timeline coordination', 'Run of Show', 'Group Resume', 'Site Itinerary', 'Exhibitor support', 'Signage and collateral', 'On-site troubleshooting', 'Hospitality', 'Volunteer coordination']
-    },
-    {
-      id: 'tools',
-      label: 'Tools & Systems',
-      summary: 'I use financial account systems and productivity tools to manage student organization accounts, partner data, communications, and documents.',
-      skills: ['SOAS Dashboard', 'Google Suite', 'iDSS CRM', 'STOVA', 'Tempest', 'Microsoft Excel', 'Microsoft Word', 'Tally forms', 'Email distribution systems', 'Database reporting']
-    },
-    {
-      id: 'leadership',
-      label: 'Leadership & Community',
-      summary: 'I take initiative, learn from feedback, support teams, and connect professional work to community needs.',
-      skills: ['Project ownership', 'Initiative', 'Team collaboration', 'Community engagement', 'Mentoring', 'Small-group facilitation', 'Problem solving', 'Adaptability', 'Time management', 'Curiosity', 'Professional development']
-    }
-  ];
-
   const achievements = [
     {
       icon: '◆',
@@ -363,7 +330,6 @@
     { label: 'About', detail: 'Background and working principles', target: 'about.html', icon: '○' },
     { label: 'Experience', detail: 'SOAS, Visit Detroit, GM, and Math Corps', target: 'experience.html', icon: '↗' },
     { label: 'Projects', detail: 'Detailed project portfolio', target: 'projects.html', icon: '◇' },
-    { label: 'Skills', detail: 'Capabilities and systems', target: 'skills.html', icon: '⌘' },
     { label: 'Education', detail: 'Michigan Ross and credentials', target: 'education.html', icon: 'M' },
     { label: 'Contact', detail: 'Email, phone, and LinkedIn', target: 'contact.html', icon: '@' }
   ];
@@ -708,29 +674,6 @@
     selectLocation('downtown');
   }
 
-  function renderSkillCategories(activeIndex = 0) {
-    const categoryContainer = $('#skillCategories');
-    categoryContainer.innerHTML = skillCategories.map((category, index) => `
-      <button class="skill-category-btn" role="tab" aria-selected="${index === activeIndex}" data-skill-index="${index}">
-        <span>${escapeHtml(category.label)}</span><span>${String(category.skills.length).padStart(2, '0')}</span>
-      </button>
-    `).join('');
-
-    $$('.skill-category-btn', categoryContainer).forEach(button => {
-      button.addEventListener('click', () => {
-        const index = Number(button.dataset.skillIndex);
-        renderSkillCategories(index);
-        renderSkills(index);
-      });
-    });
-  }
-
-  function renderSkills(index = 0) {
-    const category = skillCategories[index];
-    $('#skillSummary').innerHTML = `<p class="section-kicker">${escapeHtml(category.label)}</p><h3>${escapeHtml(category.label)}</h3><p>${escapeHtml(category.summary)}</p>`;
-    $('#skillCloud').innerHTML = category.skills.map((skill, skillIndex) => `<span class="skill-pill" style="animation-delay:${skillIndex * 28}ms">${escapeHtml(skill)}</span>`).join('');
-  }
-
   function renderAchievements() {
     const track = $('#achievementTrack');
     const position = $('#achievementPosition');
@@ -948,10 +891,6 @@
     }
     initProjectModal();
     if ($('#mapDetail')) initMap();
-    if ($('#skillCategories')) {
-      renderSkillCategories(0);
-      renderSkills(0);
-    }
     if ($('#achievementTrack')) renderAchievements();
     initContact();
     initCommandPalette();
