@@ -145,6 +145,10 @@ svg {
   padding: 110px 0;
 }
 
+.page-main > .section:first-child:not(.hero) {
+  padding-top: calc(110px + var(--header-height));
+}
+
 .section-kicker,
 .eyebrow,
 .info-label,
@@ -690,8 +694,16 @@ html[data-theme="dark"] .moon-icon {
 }
 
 .about-photo {
-  position: sticky;
-  top: 120px;
+  position: relative;
+  width: min(100%, 390px);
+  margin: 42px auto 48px;
+}
+
+.about-photo figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.85rem;
 }
 
 .about-photo img {
@@ -2303,6 +2315,10 @@ dialog::backdrop {
 @media (max-width: 680px) {
   .section {
     padding: 82px 0;
+  }
+
+  .page-main > .section:first-child:not(.hero) {
+    padding-top: calc(82px + var(--header-height));
   }
 
   .container {

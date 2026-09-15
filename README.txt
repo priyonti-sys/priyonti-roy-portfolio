@@ -1,42 +1,23 @@
-PRIYONTI ROY - INTERACTIVE PORTFOLIO
+PRIYONTI ROY - PORTFOLIO
 
 QUICK START
-1. Open index.html in Chrome, Safari, Edge, or Firefox.
-2. Keep the index.html, styles.css, script.js, and assets folder together.
-3. Use the "Preview résumé" button to view the included PDF.
-
-FEATURES
-- Responsive professional corporate design
-- Light and dark themes
-- Animated impact metrics and section reveals
-- Interactive experience tabs
-- Searchable and filterable project portfolio
-- Detailed project modals
-- Interactive Detroit-area experience map
-- Skills explorer
-- Achievement carousel
-- Quick navigation palette (Ctrl/Command + K or /)
-- Copy-to-clipboard contact controls
-- Email-draft contact form
-- Embedded résumé preview and PDF download
-
-PUBLISHING OPTIONS
-- GitHub Pages: upload the folder contents to a repository and enable Pages.
-- Netlify: drag and drop the entire folder into Netlify Drop.
-- Vercel: import a repository containing these files as a static site.
+1. Open index.html in a browser, or serve this directory as a static website.
+2. Keep the HTML pages, styles.css, script.js, and assets folder together.
+3. Navigation opens About, Experience, Projects, Skills, Education, and Contact as separate pages in the same tab.
 
 EDITING
-- Main content and layout: index.html
-- Colors, typography, spacing, and responsive design: styles.css
-- Projects, experience, skills, achievements, and interactions: script.js
-- Headshots and résumé: assets folder
+- Edit shared navigation, footer, or page copy in site-template.html, then run: python build_pages.py
+- Edit experience, projects, skills, achievements, and interactive behavior in script.js.
+- Edit visual design and responsive styles in styles.css.
+- Edit résumé content in build_resume.py, then run: python build_resume.py
+- Keep both portraits and the generated résumé in assets/.
 
-PRIVACY NOTE
-This portfolio displays the email address and phone number provided for public use. Remove or replace them in index.html and script.js before publishing if needed.
+INTERACTIVE FEATURES
+- Responsive navigation, theme toggle, and quick navigation palette (Ctrl/Command + K or /)
+- Experience tabs, searchable project cards and details, skills explorer, and achievement carousel
+- Detroit-area experience map on About
+- Contact email draft and copy buttons
+- Embedded résumé preview and PDF download
 
-
-FIXES INCLUDED
-- Experience tabs 02 and 03 now switch correctly.
-- Added keyboard navigation for experience tabs.
-- Only one headshot is used.
-- The original portrait file and aspect ratio are preserved without cropping.
+PUBLISHING
+This is a static site suitable for GitHub Pages. The repository root must contain index.html.

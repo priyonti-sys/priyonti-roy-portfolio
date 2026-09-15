@@ -3,20 +3,36 @@
 
   const experiences = [
     {
+      id: 'soas',
+      company: 'Student Organization Account Service · University of Michigan',
+      mark: 'M',
+      role: 'Financial Services Representative',
+      location: 'Ann Arbor, Michigan',
+      date: 'August 2026 - Present',
+      summary: 'Supporting financial account operations and student leaders at an office serving more than 1,700 University of Michigan student organizations.',
+      bullets: [
+        'Interpret university financial guidelines, address account needs, and help student leaders navigate financial processes and requirements.',
+        'Maintain and update student organization financial accounts using the SOAS Dashboard and Google Suite.',
+        'Handle account adjustments, payment-related requests, freezes, deficits, and signer changes.',
+        'Provide timely support to student leaders through email, phone, and in-person interactions.'
+      ],
+      tools: ['SOAS Dashboard', 'Google Suite', 'Financial account support', 'University financial guidelines', 'Payment requests', 'Student services', 'Email and phone support']
+    },
+    {
       id: 'visit-detroit',
       company: 'Visit Detroit',
       mark: 'VD',
       role: 'Destination Partnership Services Intern',
       location: 'Detroit, Michigan',
-      date: 'May 2026 - Present',
-      summary: 'Supporting partner operations, CRM data quality, event execution, stakeholder outreach, and destination-industry learning in a fast-paced tourism organization.',
+      date: 'May 2026 - August 2026',
+      summary: 'Supported partner operations, CRM data quality, event execution, stakeholder outreach, and destination-industry learning in a fast-paced tourism organization.',
       bullets: [
-        'Maintain and improve iDSS partner records by entering, verifying, correcting, and connecting data used for directories, communications, reports, and queries.',
-        'Support new partner onboarding from submitted information through directory creation, account access, invitations, tool instructions, newsletter enrollment, distribution lists, and contact mapping.',
-        'Monitor distribution-list engagement and follow up with contacts whose engagement is zero so important partner communications reach the right people.',
-        'Contribute to event logistics, registration, outreach, collateral, signage, run-of-show documents, group resumes, site itineraries, and on-site support.',
+        'Maintained and improved iDSS partner records by entering, verifying, correcting, and connecting data used for directories, communications, reports, and queries.',
+        'Supported new partner onboarding from submitted information through directory creation, account access, invitations, tool instructions, newsletter enrollment, distribution lists, and contact mapping.',
+        'Monitored distribution-list engagement and followed up with contacts whose engagement was zero so important partner communications reached the right people.',
+        'Contributed to event logistics, registration, outreach, collateral, signage, run-of-show documents, group resumes, site itineraries, and on-site support.',
         'Led a major restaurant-partner data review that corrected outdated records and improved classification between paid partners and Neighborhood Promotion Program participants.',
-        'Participate in meetings, consulting discussions, public-facing events, and cross-department learning opportunities to understand Visit Detroit’s business from multiple perspectives.'
+        'Participated in meetings, consulting discussions, public-facing events, and cross-department learning opportunities to understand Visit Detroit’s business from multiple perspectives.'
       ],
       tools: ['iDSS CRM', 'STOVA', 'Tempest', 'Microsoft Excel', 'Microsoft Word', 'Email outreach', 'Report generation', 'Event operations']
     },
@@ -247,8 +263,8 @@
     {
       id: 'operations',
       label: 'Operations & Data',
-      summary: 'I organize information, maintain reliable records, document processes, and turn detailed operational needs into clear next steps.',
-      skills: ['CRM database management', 'Data entry and validation', 'Record correction', 'Directory management', 'Report generation', 'Query support', 'Account lifecycle management', 'Distribution-list monitoring', 'Process improvement', 'Research', 'Documentation', 'Quality control']
+      summary: 'I help student leaders navigate account processes, maintain reliable records, document details, and turn operational needs into clear next steps.',
+      skills: ['Financial account support', 'University financial guidelines', 'Account adjustments', 'Payment requests', 'Deficit and freeze support', 'Signer changes', 'CRM database management', 'Data entry and validation', 'Report generation', 'Account lifecycle management', 'Process improvement', 'Documentation', 'Quality control']
     },
     {
       id: 'partnerships',
@@ -265,8 +281,8 @@
     {
       id: 'tools',
       label: 'Tools & Systems',
-      summary: 'I use business systems and productivity tools to manage partner data, event information, communications, and documents.',
-      skills: ['iDSS CRM', 'STOVA', 'Tempest', 'Microsoft Excel', 'Microsoft Word', 'Tally forms', 'Email distribution systems', 'Database reporting', 'Digital directory workflows']
+      summary: 'I use financial account systems and productivity tools to manage student organization accounts, partner data, communications, and documents.',
+      skills: ['SOAS Dashboard', 'Google Suite', 'iDSS CRM', 'STOVA', 'Tempest', 'Microsoft Excel', 'Microsoft Word', 'Tally forms', 'Email distribution systems', 'Database reporting']
     },
     {
       id: 'leadership',
@@ -343,13 +359,13 @@
   };
 
   const sections = [
-    { label: 'Home', detail: 'Introduction and impact snapshot', target: '#home', icon: '⌂' },
-    { label: 'About', detail: 'Background and working principles', target: '#about', icon: '○' },
-    { label: 'Experience', detail: 'Visit Detroit, GM, and Math Corps', target: '#experience', icon: '↗' },
-    { label: 'Projects', detail: 'Detailed project portfolio', target: '#projects', icon: '◇' },
-    { label: 'Skills', detail: 'Capabilities and systems', target: '#skills', icon: '⌘' },
-    { label: 'Education', detail: 'Michigan Ross and credentials', target: '#education', icon: 'M' },
-    { label: 'Contact', detail: 'Email, phone, and LinkedIn', target: '#contact', icon: '@' }
+    { label: 'Home', detail: 'Introduction and impact snapshot', target: 'index.html', icon: '⌂' },
+    { label: 'About', detail: 'Background and working principles', target: 'about.html', icon: '○' },
+    { label: 'Experience', detail: 'SOAS, Visit Detroit, GM, and Math Corps', target: 'experience.html', icon: '↗' },
+    { label: 'Projects', detail: 'Detailed project portfolio', target: 'projects.html', icon: '◇' },
+    { label: 'Skills', detail: 'Capabilities and systems', target: 'skills.html', icon: '⌘' },
+    { label: 'Education', detail: 'Michigan Ross and credentials', target: 'education.html', icon: 'M' },
+    { label: 'Contact', detail: 'Email, phone, and LinkedIn', target: 'contact.html', icon: '@' }
   ];
 
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -417,7 +433,7 @@
   }
 
   function initRotatingRole() {
-    const roles = ['partnership operations', 'event coordination', 'data accuracy', 'community impact', 'stakeholder communication'];
+    const roles = ['financial account support', 'student services', 'partnership operations', 'data accuracy', 'stakeholder communication'];
     const element = $('#rotatingRole');
     let index = 0;
     setInterval(() => {
@@ -478,20 +494,17 @@
   function initScrollUI() {
     const progress = $('#scrollProgress');
     const navLinks = $$('#navLinks a');
-    const trackedSections = navLinks
-      .map(link => $(link.getAttribute('href')))
-      .filter(Boolean);
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.forEach(link => {
+      const active = link.getAttribute('href') === page;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'page');
+    });
 
     const update = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
 
-      const position = window.scrollY + 150;
-      let activeId = 'home';
-      trackedSections.forEach(section => {
-        if (section.offsetTop <= position) activeId = section.id;
-      });
-      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`));
     };
 
     update();
@@ -663,12 +676,12 @@
       if (event.target === modal) modal.close();
     });
     modal.addEventListener('close', () => setModalState(false));
-    $('#projectSearch').addEventListener('input', renderProjects);
+    $('#projectSearch')?.addEventListener('input', renderProjects);
   }
 
   function initResumeModal() {
     const modal = $('#resumeModal');
-    $('#resumePreviewBtn').addEventListener('click', () => {
+    $('#resumePreviewBtn')?.addEventListener('click', () => {
       modal.showModal();
       setModalState(true);
     });
@@ -858,9 +871,10 @@
     if (!item) return;
     $('#commandModal').close();
     if (item.type === 'section') {
-      $(item.target)?.scrollIntoView({ behavior: 'smooth' });
+      window.location.href = item.target;
     } else if (item.type === 'project') {
-      openProject(item.target);
+      if ($('#projectGrid')) openProject(item.target);
+      else window.location.href = `projects.html?project=${encodeURIComponent(item.target)}`;
     } else if (item.type === 'external') {
       window.open(item.target, '_blank', 'noopener');
     } else if (item.type === 'download') {
@@ -929,21 +943,31 @@
     $('#currentYear').textContent = new Date().getFullYear();
     initTheme();
     initMobileMenu();
-    initRotatingRole();
+    if ($('#rotatingRole')) initRotatingRole();
     initRevealAndCounters();
     initScrollUI();
-    renderExperienceTabs(0);
-    renderExperiencePanel(0);
-    renderProjectFilters();
-    renderProjects();
+    if ($('#experienceTabs')) {
+      renderExperienceTabs(0);
+      renderExperiencePanel(0);
+    }
+    if ($('#projectGrid')) {
+      renderProjectFilters();
+      renderProjects();
+    }
     initProjectModal();
     initResumeModal();
-    initMap();
-    renderSkillCategories(0);
-    renderSkills(0);
-    renderAchievements();
+    if ($('#mapDetail')) initMap();
+    if ($('#skillCategories')) {
+      renderSkillCategories(0);
+      renderSkills(0);
+    }
+    if ($('#achievementTrack')) renderAchievements();
     initContact();
     initCommandPalette();
+    if ($('#projectGrid')) {
+      const projectId = new URLSearchParams(window.location.search).get('project');
+      if (projectId) openProject(projectId);
+    }
   }
 
   if (document.readyState === 'loading') {
