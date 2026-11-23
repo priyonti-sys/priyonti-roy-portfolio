@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Meet Priyonti Roy — a University of Michigan Ross student applying for Rocket's Summer 2027 Escrow Internship in Detroit." />
+  <title>Priyonti Roy | Rocket Escrow Intern 2027</title>
+  <style>
+    :root {
+      --ink: #17212d;
+      --muted: #637080;
+      --red: #c82d2e;
+      --red-deep: #a71f23;
+      --red-pale: #fff2f1;
+      --paper: #ffffff;
+      --soft: #f7f8fa;
+      --line: #e7e9ed;
+      --radius: 18px;
+      --shadow: 0 14px 36px rgba(18, 28, 44, .06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid #ffad9e; outline-offset: 4px; border-radius: 5px; }
+    .wrap { max-width: 1120px; margin: auto; padding: 0 28px; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .topbar-inner { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 760; letter-spacing: -.025em; white-space: nowrap; }
+    .brand-mark { background: var(--red); color: white; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 11px; font-size: 15px; letter-spacing: -.03em; }
+    nav { display: flex; gap: 27px; align-items: center; font-size: 13px; font-weight: 640; color: #4e5a69; }
+    nav a:hover { color: var(--red); }
+    nav .nav-contact { border: 1px solid var(--line); padding: 9px 15px; border-radius: 9px; color: var(--ink); }
+    nav .nav-contact:hover { border-color: var(--red); }
+    .hero { padding: 102px 0 92px; background: radial-gradient(circle at 84% 27%, #fff2f1 0, transparent 32%), linear-gradient(180deg, #fff 60%, #fcfcfd 100%); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(310px, .75fr); gap: 75px; align-items: center; }
+    .eyebrow { text-transform: uppercase; font-weight: 780; color: var(--red); font-size: 11px; letter-spacing: .15em; margin: 0 0 24px; }
+    h1 { font-size: clamp(40px, 5.3vw, 67px); line-height: 1.09; letter-spacing: -.052em; max-width: 720px; margin: 0; font-weight: 780; }
+    h1 span { color: var(--red); }
+    .lead { font-size: 18px; color: #506070; max-width: 615px; line-height: 1.72; margin: 25px 0 30px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; border-radius: 10px; padding: 12px 19px; font-size: 13px; font-weight: 745; transition: transform .15s, background .15s, border .15s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-main { background: var(--red); color: white; }
+    .button-main:hover { background: var(--red-deep); }
+    .button-outline { background: white; border: 1px solid #d8dde3; }
+    .button-outline:hover { border-color: var(--red); }
+    .hero-side { background: white; border: 1px solid #ede7e7; box-shadow: 0 30px 80px rgba(82,34,34,.09); border-radius: 22px; padding: 30px; transform: rotate(1deg); }
+    .hero-side .side-label { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 24px; font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+    .side-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+    .side-item { padding: 18px 0; border-top: 1px solid var(--line); }
+    .side-item strong { display: block; font-size: 16px; letter-spacing: -.02em; }
+    .side-item p { margin: 5px 0 0; font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .stats { display: flex; flex-wrap: wrap; gap: 12px 25px; margin-top: 28px; color: #657181; font-size: 12px; font-weight: 630; }
+    .stats span::before { content: "•"; color: var(--red); font-size: 17px; vertical-align: -1px; margin-right: 9px; }
+    .section { padding: 91px 0; }
+    .section-muted { background: var(--soft); }
+    .section-head { max-width: 710px; margin-bottom: 34px; }
+    .kicker { color: var(--red); font-size: 12px; font-weight: 795; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 11px; }
+    h2 { font-size: clamp(29px, 3.5vw, 42px); line-height: 1.2; letter-spacing: -.045em; margin: 0 0 12px; font-weight: 760; }
+    .section-sub { color: var(--muted); font-size: 16px; max-width: 695px; margin: 0; }
+    .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .reason { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .reason .number { font-weight: 840; color: var(--red); font-size: 12px; margin-bottom: 22px; letter-spacing: .08em; }
+    h3 { margin: 0 0 10px; letter-spacing: -.027em; font-size: 19px; }
+    .reason p, .experience p, .step p { font-size: 14px; color: #637080; margin: 0; line-height: 1.75; }
+    .mission { margin-top: 24px; padding: 25px 29px; border-left: 4px solid var(--red); background: var(--red-pale); border-radius: 0 12px 12px 0; }
+    .mission strong { font-size: 16px; }
+    .mission p { color: #5e5558; margin: 5px 0 0; font-size: 14px; line-height: 1.75; }
+    .experience-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .experience { border: 1px solid var(--line); background: white; border-radius: var(--radius); padding: 26px; }
+    .experience .tag { display: inline-block; color: var(--red); background: var(--red-pale); font-size: 11px; padding: 5px 10px; border-radius: 30px; font-weight: 780; letter-spacing: .02em; margin-bottom: 20px; }
+    .experience h3 { font-size: 18px; margin-bottom: 6px; }
+    .experience .org { font-size: 12px; font-weight: 740; color: #4e5e6d; margin-bottom: 14px; }
+    .working { margin-top: 22px; font-size: 13px; color: #586576; }
+    .working strong { color: var(--ink); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: s; }
+    .step { border-top: 2px solid var(--line); padding-top: 18px; }
+    .step .step-number { color: var(--red); font-size: 13px; font-weight: 780; margin-bottom: 11px; }
+    .future { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .future-card { background: white; border: 1px solid var(--line); padding: 28px; border-radius: var(--radius); }
+    .future-card strong { color: var(--red); text-transform: uppercase; letter-spacing: .11em; font-size: 11px; }
+    .future-card h3 { margin: 13px 0 12px; }
+    .future-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .closing { text-align: center; padding: 90px 0 94px; }
+    .closing h2 { font-size: clamp(30px, 4vw, 47px); max-width: 640px; margin: 0 auto 15px; }
+    .closing p { color: var(--muted); max-width: 570px; margin: 0 auto 28px; font-size: 16px; }
+    .closing .buttons { justify-content: center; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; font-size: 12px; color: #7a8592; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 850px) {
+      .hero { padding: 68px 0 72px; }
+      .hero-grid { gap: 36px; grid-template-columns: 1fr; }
+      .hero-side { max-width: 650px; transform: none; }
+      .reason-grid, .experience-list { grid-template-columns: 1fr; }
+      .reason { padding: 25px; }
+      .reason .number { margin-bottom: 12px; }
+      .steps { grid-template-columns: 1fr; gap: 28px; }
+      .section { padding: 66px 0; }
+    }
+    @media (max-width: 630px) {
+      .wrap { padding: 0 21px; }
+      .topbar-inner { min-height: 67px; }
+      nav { gap: 10px; }
+      nav .nav-link { display: none; }
+      nav .nav-contact { padding: 7px 11px; }
+      .brand { font-size: 13px; }
+      .brand-mark { width: 34px; height: 34px; }
+      .hero { padding: 58px 0 62px; }
+      h1 { font-size: 40px; }
+      .lead { font-size: 16px; }
+      .hero-side { padding: 24px; }
+      .future { grid-template-columns: 1fr; }
+      .closing { padding: 65px 0; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Priyonti Roy, back to top"><span class="brand-mark">PR</span><span>Priyonti Roy</span></a>
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="#why-me">Why me</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#future">My plans</a>
+        <a class="nav-contact" href="mailto:05roypri@gmail.com?subject=Rocket%20Escrow%20Internship%20-%20Priyonti%20Roy">Contact me ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Rocket · Escrow Intern · Summer 2027</p>
+          <h1 id="hero-title">Great with numbers.<br /><span>Even better with people.</span></h1>
+          <p class="lead">Hi, I'm <strong>Priyonti Roy</strong>, a BBA student at the University of Michigan's Ross School of Business. I want to bring careful financial thinking, practical problem-solving, and a genuine willingness to learn to Rocket's escrow team in Detroit.</p>
+          <div class="buttons">
+            <a class="button button-main" href="#why-me">Why hire me <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#future">My future plans <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="stats" aria-label="At a glance">
+            <span>Michigan Ross BBA</span>
+            <span>Class of 2029</span>
+            <span>Detroit-area opportunity</span>
+          </div>
+        </div>
+        <aside class="hero-side" aria-label="What I bring">
+          <div class="side-label"><span>What I bring to the table</span><span class="side-dot" aria-hidden="true"></span></div>
+          <div class="side-item"><strong>Financial operations experience</strong><p>Supporting real student organization accounts, reimbursements, and account questions at U-M.</p></div>
+          <div class="side-item"><strong>Process-focused problem solving</strong><p>Helping a consulting client think through payment workflows and clear documentation.</p></div>
+          <div class="side-item"><strong>Strong communication</strong><p>Explaining financial procedures in a way people can actually understand and act on.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="why-me" class="section" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">01 / My fit</div>
+          <h2 id="why-title">Why I would be a strong intern</h2>
+          <p class="section-sub">This role combines the three things I enjoy most: working with financial information, improving how things get done, and helping the people who rely on those processes.</p>
+        </div>
+        <div class="reason-grid">
+          <article class="reason"><div class="number">01 / ACCURACY</div><h3>I know details matter.</h3><p>At U-M's Student Organization Accounts Service, I work with reimbursement questions, account requirements, and financial processes where careful review and clear guidance make a real difference.</p></article>
+          <article class="reason"><div class="number">02 / INITIATIVE</div><h3>I look for better ways.</h3><p>As a consultant with Tech Plus, I've contributed to research and documentation around digital payments and subscription workflows. I like turning complicated steps into usable processes.</p></article>
+          <article class="reason"><div class="number">03 / CURIOSITY</div><h3>I learn by doing.</h3><p>My Ross coursework has challenged me to analyze data, test assumptions, and support recommendations. I'm excited to put that analytical mindset to work on real escrow operations.</p></article>
+        </div>
+        <div class="mission">
+          <strong>Why Rocket?</strong>
+          <p>Rocket's mission to <em>Help Everyone Home</em> gives financial operations a human purpose. Escrow may happen behind the scenes, but accurate records, reliable processes, and thoughtful teamwork help create a better experience for clients. That's work I'd be proud to contribute to.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-muted" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">02 / Relevant experience</div>
+          <h2 id="experience-title">Here's what I've been working on</h2>
+          <p class="section-sub">My experience is a mix of financial services, consulting, and analytical coursework — each relevant to Rocket's internship.</p>
+        </div>
+        <div class="experience-list">
+          <article class="experience"><span class="tag">FINANCIAL SERVICES</span><h3>Financial Services Representative</h3><div class="org">U-M · Student Organization Accounts Service</div><p>Support financial account inquiries, reimbursement processes, authorized signer requirements, and students navigating institutional procedures.</p></article>
+          <article class="experience"><span class="tag">CONSULTING & SYSTEMS</span><h3>Consultant</h3><div class="org">Tech Plus Consulting · C.U.R.E. LLC project</div><p>Contribute research and documentation for online payment, subscription, and account workflows; collaborate with teammates on a practical client solution.</p></article>
+          <article class="experience"><span class="tag">ANALYSIS & LEADERSHIP</span><h3>Ross BBA Student & Finance Chair</h3><div class="org">University of Michigan · Ross & campus organizations</div><p>Build analytical skills through coursework in accounting and operations, including data-driven business projects, while taking responsibility for student organization finances.</p></article>
+        </div>
+        <p class="working"><strong>Skills I'm building:</strong> Excel and spreadsheet analysis · financial process review · research · structured documentation · cross-functional communication · AI-assisted productivity</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contribute-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">03 / How I'd contribute</div>
+          <h2 id="contribute-title">My approach at Rocket</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-number">STEP 01</div><h3>Learn the process</h3><p>Ask thoughtful questions, listen to the team, and understand how escrow and cash-management workflows connect.</p></div>
+          <div class="step"><div class="step-number">STEP 02</div><h3>Check the details</h3><p>Approach data validation, quality reviews, and documentation with consistency and attention to accuracy.</p></div>
+          <div class="step"><div class="step-number">STEP 03</div><h3>Make things clearer</h3><p>Spot friction points, share findings, and support simple improvements that make the team's work easier.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="future" class="section section-muted" aria-labelledby="future-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">04 / Looking ahead</div>
+          <h2 id="future-title">My future plans</h2>
+          <p class="section-sub">I want to build a career in financial services grounded in strong technical skills, good judgment, and an understanding of the people behind every transaction.</p>
+        </div>
+        <div class="future">
+          <article class="future-card"><strong>Summer 2027</strong><h3>Learn, contribute, and grow at Rocket</h3><p>Develop hands-on experience with escrow operations, cash management, system changes, and quality controls. My goal is to be someone the team can rely on for thoughtful, accurate work.</p></article>
+          <article class="future-card"><strong>Beyond graduation</strong><h3>Grow into a well-rounded finance professional</h3><p>Keep strengthening my analytical and leadership skills, take on more complex financial problems, and help build processes that are both efficient and trustworthy.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="wrap">
+        <div class="kicker">One last thing</div>
+        <h2 id="closing-title">I don't expect to know everything on day one.</h2>
+        <p>But I'll come ready to learn quickly, check my work carefully, ask good questions, and make myself useful. I'd love the opportunity to do that at Rocket.</p>
+        <div class="buttons"><a class="button button-main" href="mailto:05roypri@gmail.com?subject=Rocket%20Escrow%20Internship%20-%20Priyonti%20Roy">Let's connect ↗</a><a class="button button-outline" href="#top">Back to top ↑</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© 2026 Priyonti Roy · Personal candidate website</span><span>Made for Rocket's Summer 2027 Escrow Internship · Detroit, Michigan</span></div></footer>
+</body>
+</html>
