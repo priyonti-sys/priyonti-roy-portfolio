@@ -86,11 +86,6 @@
     .closing { text-align: center; padding: 90px 0 94px; }
     .closing h2 { font-size: clamp(30px, 4vw, 47px); max-width: 640px; margin: 0 auto 15px; }
     .closing p { color: var(--muted); max-width: 570px; margin: 0 auto 28px; font-size: 16px; }
-    .closing .buttons { justify-content: center; }
-    .contact-email { display: inline-block; font-size: clamp(18px, 2.8vw, 25px); font-weight: 750; color: var(--ink); text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 5px; margin: 0 0 20px; overflow-wrap: anywhere; }
-    .contact-hint { color: var(--muted); font-size: 13px; margin: 18px auto 0; max-width: 540px; }
-    button.button { font-family: inherit; cursor: pointer; }
-    .copy-feedback { margin-top: 11px; font-size: 13px; color: var(--red-deep); min-height: 18px; }
     footer { border-top: 1px solid var(--line); padding: 24px 0; font-size: 12px; color: #7a8592; }
     .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
     @media (max-width: 850px) {
@@ -130,7 +125,6 @@
         <a class="nav-link" href="#why-me">Why me</a>
         <a class="nav-link" href="#experience">Experience</a>
         <a class="nav-link" href="#future">My plans</a>
-        <a class="nav-contact" href="#contact">Contact me ↓</a>
       </nav>
     </div>
   </header>
@@ -224,52 +218,16 @@
       </div>
     </section>
 
-    <section id="contact" class="closing" aria-labelledby="closing-title">
+    <section class="closing" aria-labelledby="closing-title">
       <div class="wrap">
         <div class="kicker">One last thing</div>
         <h2 id="closing-title">I don't expect to know everything on day one.</h2>
         <p>But I'll come ready to learn quickly, check my work carefully, ask good questions, and make myself useful. I'd love the opportunity to do that at Rocket.</p>
-        <a class="contact-email" href="mailto:05roypri@gmail.com?subject=Rocket%20Escrow%20Internship%20-%20Priyonti%20Roy">05roypri@gmail.com</a>
-        <div class="buttons">
-          <a class="button button-main" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=05roypri%40gmail.com&amp;su=Rocket%20Escrow%20Internship%20-%20Priyonti%20Roy" target="_blank" rel="noopener noreferrer">Write in Gmail ↗</a>
-          <a class="button button-outline" href="mailto:05roypri@gmail.com?subject=Rocket%20Escrow%20Internship%20-%20Priyonti%20Roy">Open email app ↗</a>
-          <button class="button button-outline" type="button" id="copy-email">Copy email</button>
-        </div>
-        <div id="copy-feedback" class="copy-feedback" role="status" aria-live="polite"></div>
-        <p class="contact-hint">If your email app doesn't open, use Gmail or copy the email address above.</p>
+
       </div>
     </section>
   </main>
 
-  <script>
-    (function () {
-      const button = document.getElementById('copy-email');
-      const feedback = document.getElementById('copy-feedback');
-      button.addEventListener('click', async function () {
-        const email = '05roypri@gmail.com';
-        try {
-          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(email);
-          } else {
-            const field = document.createElement('textarea');
-            field.value = email;
-            field.setAttribute('readonly', '');
-            field.style.position = 'fixed';
-            field.style.opacity = '0';
-            document.body.appendChild(field);
-            field.select();
-            const copied = document.execCommand('copy');
-            field.remove();
-            if (!copied) throw new Error('Copy unavailable');
-          }
-          button.textContent = 'Copied ✓';
-          feedback.textContent = 'Email address copied.';
-        } catch (error) {
-          feedback.textContent = 'Please select and copy the email address above.';
-        }
-      });
-    }());
-  </script>
 
   <footer><div class="wrap footer-inner"><span>© 2026 Priyonti Roy · Personal candidate website</span><span>Made for Rocket's Summer 2027 Escrow Internship · Detroit, Michigan</span></div></footer>
 </body>
