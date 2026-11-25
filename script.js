@@ -3,6 +3,13 @@
 
   const experiences = [
     {
+      id: 'tech-plus', company: 'Tech Plus Consulting', mark: 'TP', role: 'Consultant',
+      location: 'Ann Arbor, Michigan', date: 'Fall 2026 – Present',
+      summary: 'Supporting digital subscription and onboarding workflows for a client.',
+      bullets: ['Compare email service providers and document implementation requirements.', 'Contribute to Stripe subscription and passwordless sign-in planning.'],
+      tools: ['Consulting', 'Business analysis', 'Documentation']
+    },
+    {
       id: 'soas',
       company: 'Student Organization Account Service · University of Michigan',
       mark: 'M',
@@ -71,10 +78,10 @@
     }
   ];
 
-  const projects = [
+  const projects = [{"id":"efes-optimization","number":"01","title":"Anadolu Efes | Supply Chain Optimization","category":"Analytics","featured":true,"summary":"Modeled a production network serving 635 million liters of demand.","tags":["Linear programming","Scenario analysis"],"context":"Ross operations coursework · team project.","actions":["Compared facility expansion and utilization scenarios."],"impact":"A 90% utilization cap increased modeled cost by approximately 15.7%.","skills":["Linear programming","Scenario analysis"]},{"id":"nike-lululemon","number":"02","title":"Nike vs. Lululemon | Financial Analysis","category":"Finance","featured":true,"summary":"Compared three years of financial performance across two athletic apparel companies.","tags":["Financial statements","Trend analysis"],"context":"Ross business communication coursework · team project.","actions":["Developed comparative income statement tables."],"impact":"Translated financial trends into a comparative business report.","skills":["Financial statements","Trend analysis"]},{"id":"subscription-strategy","number":"03","title":"Digital Subscription Strategy","category":"Consulting","featured":true,"summary":"Contributing to subscription and onboarding planning through Tech Plus Consulting.","tags":["Stripe","Documentation"],"context":"Ongoing client project; confidential details omitted.","actions":["Compared email providers and contributed to workflow documentation."],"impact":"Work in progress.","skills":["Stripe","Documentation"]},{"id":"efes-forecast","number":"04","title":"Anadolu Efes | Demand Forecasting","category":"Analytics","featured":false,"summary":"Exploring seasonality, tourism, pricing and Ramadan as demand drivers.","tags":["Regression","Forecasting"],"context":"Ongoing Ross coursework · team project.","actions":["Plan correlation and regression assessments."],"impact":"Year 8 forecast in progress.","skills":["Regression","Forecasting"]},{"id":"market-desk","number":"05","title":"The Market Desk","category":"Markets","featured":false,"summary":"A personal market research dashboard concept for sales & trading preparation.","tags":["FICC","Equities"],"context":"Independent learning project.","actions":["Designed a dashboard concept and glossary."],"impact":"Building market fluency.","skills":["FICC","Equities"]},
     {
       id: 'restaurant-modernization',
-      number: '01',
+      number: '06',
       title: 'Restaurant Partner Data Modernization',
       category: 'Data & Operations',
       featured: true,
@@ -94,7 +101,7 @@
     },
     {
       id: 'partner-onboarding',
-      number: '02',
+      number: '07',
       title: 'New Partner Onboarding Workflow',
       category: 'Data & Operations',
       featured: false,
@@ -114,7 +121,7 @@
     },
     {
       id: 'npp-lifecycle',
-      number: '03',
+      number: '08',
       title: 'Neighborhood Promotion Program Account Review',
       category: 'Data & Operations',
       featured: false,
@@ -132,7 +139,7 @@
     },
     {
       id: 'celebrate-services-week',
-      number: '04',
+      number: '09',
       title: 'National Celebrate Services Week',
       category: 'Events',
       featured: false,
@@ -150,7 +157,7 @@
     },
     {
       id: 'event-operations',
-      number: '05',
+      number: '10',
       title: 'Detroit Event Operations Portfolio',
       category: 'Events',
       featured: false,
@@ -168,7 +175,7 @@
     },
     {
       id: 'event-documents',
-      number: '06',
+      number: '11',
       title: 'Client and Event Planning Documents',
       category: 'Data & Operations',
       featured: false,
@@ -186,7 +193,7 @@
     },
     {
       id: 'symphony-session',
-      number: '07',
+      number: '12',
       title: 'Symphony Report Education Session',
       category: 'Events',
       featured: false,
@@ -204,7 +211,7 @@
     },
     {
       id: 'veterans-games',
-      number: '08',
+      number: '13',
       title: 'National Veterans Wheelchair Games Volunteer Support',
       category: 'Community',
       featured: false,
@@ -221,7 +228,7 @@
     },
     {
       id: 'gm-community',
-      number: '09',
+      number: '14',
       title: 'GM Community Impact Projects',
       category: 'Community',
       featured: false,
@@ -241,7 +248,7 @@
     },
     {
       id: 'math-corps-support',
-      number: '10',
+      number: '15',
       title: 'Math Corps Student Support',
       category: 'Education',
       featured: false,
@@ -260,6 +267,7 @@
   ];
 
   const achievements = [
+    { icon: '◆', title: 'Goldman Sachs Emerging Leaders Series', text: 'Participated in the Sales & Trading Academy, exploring FICC and equities.', label: 'November 2026 · New York' },
     {
       icon: '◆',
       title: 'Initiated a High-Value Data Project',
@@ -304,6 +312,11 @@
     }
   ];
 
+  // Keep selected work concise while preserving existing interactive controls.
+  const selected = new Set(['efes-optimization','nike-lululemon','subscription-strategy','efes-forecast','market-desk','restaurant-modernization','celebrate-services-week','gm-community']);
+  for (let i = projects.length - 1; i >= 0; i--) if (!selected.has(projects[i].id)) projects.splice(i, 1);
+  projects.forEach((p,i) => { p.number = String(i+1).padStart(2,'0'); p.actions = p.actions.slice(0,2); p.skills = p.skills.slice(0,4); });
+  experiences.forEach(e => { e.bullets = e.bullets.slice(0,2); });
   const mapLocations = {
     downtown: {
       label: 'Downtown Detroit',
